@@ -1,0 +1,20 @@
+default:
+    autoload:
+        '': %paths.base%/tests/acceptance/features/bootstrap
+
+    suites:
+        core_features:
+            paths:
+                - %paths.base%/tests/acceptance/features
+
+    extensions:
+        Laracasts\Behat: ~
+        Behat\MinkExtension:
+            base_url: http://localhost:8000/
+            default_session: laravel
+            laravel: ~
+            # show_auto: true
+            show_cmd: google-chrome-stable %s
+
+    formatters:
+        pretty: true
