@@ -1,6 +1,5 @@
 <?php
 
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\MinkExtension\Context\MinkContext;
@@ -22,10 +21,11 @@ class FeatureContext extends MinkContext implements Context, SnippetAcceptingCon
     }
 
     /**
-     * @Given I input :arg1
+     * @Given I input :number
      */
-    public function iInput($arg1)
+    public function iInput($number)
     {
-        throw new PendingException();
+        $this->fillField('number', $number);
+        $this->pressButton('Print');
     }
 }
