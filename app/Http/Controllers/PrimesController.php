@@ -39,10 +39,8 @@ class PrimesController extends Controller
         $divider = 2;
 
         for ($divider = 2; $number > $divider; $divider++) {
-            while ($number % $divider == 0) {
+            for (; $number % $divider == 0; $number /= $divider) {
                 $primeFactors[] = $divider;
-
-                $number /= $divider;
             }
         }
 
